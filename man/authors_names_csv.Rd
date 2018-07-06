@@ -4,14 +4,18 @@
 \alias{authors_names_csv}
 \title{Create a list of authors}
 \usage{
-authors_names_csv(file_path)
+authors_names_csv(file_path, header = TRUE)
 }
 \arguments{
 \item{file_path}{The full path of the CSV file}
+
+\item{header}{Logical. Does the CSV have a header row. Default to TRUE}
 }
 \value{
 A list of author/affiliation to be used with coverpage()
 }
 \description{
-This function creates a list of authors/affiliations from a CSV file. The CSV should contain one authors per line, with the first column with the author full name, the subsequent for the affiliations (one affiliation per column only). The first column should be named "author".
+This function creates a list of authors/affiliations from a CSV file. 
+The CSV should contain one authors per line, with the first column with the author full name, 
+the subsequent for the affiliations (one affiliation per column only).
 }

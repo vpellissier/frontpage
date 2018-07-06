@@ -1,6 +1,6 @@
 Package: frontpage
 Title: Creates first pages for scientific articles
-Version: 0.0.0.9000
+Version: 0.0.1.0
 Authors@R: person("Vincent", "Pellissier", email = "vincent.pellissier@gmail.com", role = c("aut", "cre"))
 Description: The package creates first pages for scientific paper, with affiliations numbered for each author.
 Depends: 	R (>= 3.5.0),

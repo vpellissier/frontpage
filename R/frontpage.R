@@ -1,8 +1,11 @@
 #' Scientfic article coverpage builder
 #' 
-#' This function creates a proper frontpage for scientific articles, with superscript numbers refering to authors affiliations
+#' This function creates a proper frontpage for scientific articles, with superscript numbers 
+#' refering to authors affiliations
 #' 
-#' @param author_list A named list of author/affiliations, with the author names as names of the list, and affiliations as the content of the list. Can be created with the functions authors_names_interactive() or author_names_csv()
+#' @param author_list A named list of author/affiliations, with the author names as names of the 
+#' list, and affiliations as the content of the list. Can be created with the functions 
+#' authors_names_interactive() or author_names_csv()
 #' @param path The directory path in which the coverpage will be saved (coverpage.docx)
 #' @return Save a coverpage.docx with names and affiliations
 #' 

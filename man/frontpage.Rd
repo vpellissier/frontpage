@@ -7,7 +7,9 @@
 frontpage(author_list, path)
 }
 \arguments{
-\item{author_list}{A named list of author/affiliations, with the author names as names of the list, and affiliations as the content of the list. Can be created with the functions authors_names_interactive() or author_names_csv()}
+\item{author_list}{A named list of author/affiliations, with the author names as names of the 
+list, and affiliations as the content of the list. Can be created with the functions 
+authors_names_interactive() or author_names_csv()}
 
 \item{path}{The directory path in which the coverpage will be saved (coverpage.docx)}
 }
@@ -15,5 +17,6 @@ frontpage(author_list, path)
 Save a coverpage.docx with names and affiliations
 }
 \description{
-This function creates a proper frontpage for scientific articles, with superscript numbers refering to authors affiliations
+This function creates a proper frontpage for scientific articles, with superscript numbers 
+refering to authors affiliations
 }
