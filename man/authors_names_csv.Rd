@@ -20,6 +20,6 @@ The CSV should contain one authors per line, with the first column with the auth
 the subsequent for the affiliations (one affiliation per column only).
 }
 \examples{
-authors <- read.csv2(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
+authors <- authors_names_csv(file.path(path.package('frontpage'), "extdata/example.csv")), header= T)
 
 }
