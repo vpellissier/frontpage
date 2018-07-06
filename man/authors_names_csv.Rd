@@ -19,3 +19,7 @@ This function creates a list of authors/affiliations from a CSV file.
 The CSV should contain one authors per line, with the first column with the author full name, 
 the subsequent for the affiliations (one affiliation per column only).
 }
+\examples{
+authors <- read.csv2(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
+
+}

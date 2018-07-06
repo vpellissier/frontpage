@@ -6,8 +6,11 @@
 #' 
 #' @param file_path The full path of the CSV file
 #' @param header Logical. Does the CSV have a header row. Default to TRUE
+#' 
 #' @return A list of author/affiliation to be used with coverpage()
-#' @example authors <- read.csv2(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
+#' 
+#' @examples
+#' authors <- read.csv2(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
 #' 
 #' @export
 authors_names_csv <- function(file_path, header = TRUE){

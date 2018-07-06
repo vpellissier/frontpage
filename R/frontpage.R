@@ -7,8 +7,11 @@
 #' list, and affiliations as the content of the list. Can be created with the function 
 #' author_names_csv()
 #' @param path The full path of the coverpage ('path/filename.docx')
+#' 
 #' @return Save a coverpage.docx with names and affiliations
-#' @example authors <- read.csv2(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
+#' 
+#' @examples
+#' authors <- read.csv2(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
 #' temp <- dir.create(tempdir())
 #' frontpage(author, file.path(temp, 'frontpage1.docx'))
 #' shell.exec(file.path(temp, 'frontpage1.docx'))
