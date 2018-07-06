@@ -21,7 +21,7 @@ This function creates a proper frontpage for scientific articles, with superscri
 refering to authors affiliations
 }
 \examples{
-authors <- authors_names_csv(file.path(path.package('frontpage'), "extdata/example.csv")), header= T)
+authors <- authors_names_csv(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
 temp <- tempdir()
 dir.create(temp)
 frontpage(authors, file.path(temp, 'frontpage1.docx'))

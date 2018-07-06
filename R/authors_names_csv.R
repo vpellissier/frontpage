@@ -10,7 +10,7 @@
 #' @return A list of author/affiliation to be used with coverpage()
 #' 
 #' @examples
-#' authors <- authors_names_csv(file.path(path.package('frontpage'), "extdata/example.csv")), header= T)
+#' authors <- authors_names_csv(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
 #' 
 #' @export
 authors_names_csv <- function(file_path, header = TRUE){
