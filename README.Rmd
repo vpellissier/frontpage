@@ -1,23 +1,15 @@
 ---
-title: "Creating paper frontpage with author affiliations in R"
+title: "Creating a paper frontpage with  R"
 author: "Vincent Pellissier"
 output: 
   md_document:
     variant: markdown_github
 ---
+Creating the first page of a paper is seemingly easy, you just collect the names and affiliations of everyone, list the authors in whatever order you or your supevisor decide, you list and number the affiliations in the order they appear and you report these numbers (often as upperscript) after each author names. 
+However, if your paper has a long list of authors it might become tedious to do it manually. 
+Even worse, there is always this one author in the middle of the list that suddenly adds an affiliation (granted, it might just be because you spent a lot of time finishing the paper, and then everyone moved). Anyway, it will then requires you to manually shift every single number after this authors.
 
-Creating the first page of a paper is seemingly easy, you just collect the name and affiliations of
-everyone, list the authors in whatever order you or your supevisor decide, you list and number
-the affiliations in the order they appear and you report these numbers (often as upperscript)
-after each author names.
-However, if your paper have a long list of authors it might become
-tedious to do it manually.
-Even worse, there is always this one author in the middle of the list that suddenly add an affilition 
-(granted, it might just be because you spent a lot of time finishing the paper, and then everyone moved).
-Anyway, it will then requires you to manually shift every single number after this authors.
-
-While I was facing this exact problem a few weeks ago, I decided to be lazy and write an R package 
-to do it, instead of renumbering every single one of my 40 co-authors.
+While I was facing this exact problem a few weeks ago, I decided to be lazy and write an R package to do it, instead of renumbering every single one of my 40 co-authors.
 
 ## Installing the package frontpage
 
@@ -30,13 +22,7 @@ devtools::install_github('vpellissier/frontpage')
 
 ## Creating the author list
 
-The author list with affiliations is stored as a CSV file, because it is conveniently modified 
-using any spreadsheet tool.
-The CSV file should contain only one author per line, with the full name of the author in the first
-column, and every affiliations of that author in the following column (one affiliation per column only).
-The CSV can have header or not (i.e. the fist row contain column names or is simply the author).
-If you are using Excel to create the CSV, you should save using the type 'CSV (Comma delimited) (*.csv)'
-and not any of the other two options ('CSV (Macintosh)' or 'CSV (MS-DOS)').
+The author list with affiliations is stored as a CSV file, because it is conveniently modified using any spreadsheet tool. The CSV file should contain only one author per line, with the full name of the author in the first column, and every affiliations of that author in the following columns (one affiliation per column only). The CSV can have header or not (i.e. the fist row contain column names or is simply the author). If you are using Excel to create the CSV, you should save using the type 'CSV (Comma delimited) (\*.csv)' and not any of the other two options ('CSV (Macintosh)' or 'CSV (MS-DOS)').
 
 I included a small example file in the package:
 ```{r, eval=FALSE}
@@ -48,14 +34,15 @@ shell.exec(file = file.path(path.package('frontpage'), "extdata/example.csv"))
 Creating the paper first page is really straigtfoward when you have your CSV file.
 First, you create your author list in R from your CSV file:
 ```{r, eval = F}
-authors <- read.csv2(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
+authors <- authors_names_csv(file.path(path.package('frontpage'), "extdata/example.csv"), header= TRUE)
 ```
 Here, the first row of example.csv contains column name, so the `header` option is set to `TRUE`
 
 Then, you can create your frontpage and save it wherever you want (here, in a temporary folder):
 ```{r, eval = F}
-temp <- dir.create(tempdir())
-frontpage(author, file.path(temp, 'frontpage1.docx'))
+temp <- tempdir()
+dir.create(temp)
+frontpage(authors, file.path(temp, 'frontpage1.docx'))
 ```
 
 And all that is left to do is write the rest of your paper in that doc file!
