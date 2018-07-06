@@ -15,10 +15,6 @@ author_names_csv()}
 }
 \value{
 Save a coverpage.docx with names and affiliations
-#' @example authors <- read.csv2(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
-temp <- dir.create(tempdir())
-frontpage(author, file.path(temp, 'frontpage1.docx'))
-shell.exec(file.path(temp, 'frontpage1.docx'))
 }
 \description{
 This function creates a proper frontpage for scientific articles, with superscript numbers 
