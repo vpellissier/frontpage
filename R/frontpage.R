@@ -11,9 +11,10 @@
 #' @return Save a coverpage.docx with names and affiliations
 #' 
 #' @examples
-#' authors <- read.csv2(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
-#' temp <- dir.create(tempdir())
-#' frontpage(author, file.path(temp, 'frontpage1.docx'))
+#' authors <- authors_names_csv(file.path(path.package('frontpage'), "extdata/example.csv")), header= T)
+#' temp <- tempdir()
+#' dir.create(temp)
+#' frontpage(authors, file.path(temp, 'frontpage1.docx'))
 #' shell.exec(file.path(temp, 'frontpage1.docx'))
 #' 
 #' @export
@@ -39,9 +40,9 @@ frontpage <- function(author_list, path){
     }
     
     doc <- docx()
-    doc <- addParagraph(doc, "\n")
     doc <- addParagraph(doc, numered_authors)
-    
+    doc <- addParagraph(doc, "\n")
+        
     for(i in seq(length(sorted_institutes))){
         doc <- addParagraph(doc, paste(i, sorted_institutes[i], sep = ". "))
     }
