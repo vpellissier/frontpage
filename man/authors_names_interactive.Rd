@@ -7,12 +7,12 @@
 authors_names_interactive(save = FALSE, path = NULL)
 }
 \arguments{
-\item{save}{Logical. TRUE if the list created should be saved as a csv file usable by frontpage.}
+\item{save}{Logical. TRUE if the list created should be saved as a csv file usable by frontpage().}
 
 \item{path}{If save is TRUE, the full path of the csv file to be created ("path/filename.csv").}
 }
 \value{
-A list of author/affiliation to be used with coverpage()
+A list of author/affiliation to be used with frontpage()
 }
 \description{
 This function creates a list of authors/affiliations interactively. The function prompt queries asking for the author name and its affiliations. The resulting object can be used straight away in the frontpage() function or saved as a csv file for further use.
