@@ -1,11 +1,10 @@
 #' Create a list of authors
 #' 
 #' This function creates a list of authors/affiliations interactively. The function prompt queries asking for the author name and its affiliations. The resulting object can be used straight away in the frontpage() function or saved as a csv file for further use.
-#' @param save Logical. TRUE if the list created should be saved as a csv file usable by frontpage.
+#' @param save Logical. TRUE if the list created should be saved as a csv file usable by frontpage().
 #' @param path If save is TRUE, the full path of the csv file to be created ("path/filename.csv").
-#' @return A list of author/affiliation to be used with coverpage()
+#' @return A list of author/affiliation to be used with frontpage()
 #' 
-#' @export
 authors_names_interactive <- function(save = FALSE, path = NULL){
     if(!exists("authors"))
         authors <- list()

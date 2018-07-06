@@ -4,10 +4,14 @@
 #' refering to authors affiliations
 #' 
 #' @param author_list A named list of author/affiliations, with the author names as names of the 
-#' list, and affiliations as the content of the list. Can be created with the functions 
-#' authors_names_interactive() or author_names_csv()
-#' @param path The directory path in which the coverpage will be saved (coverpage.docx)
+#' list, and affiliations as the content of the list. Can be created with the function 
+#' author_names_csv()
+#' @param path The full path of the coverpage ('path/filename.docx')
 #' @return Save a coverpage.docx with names and affiliations
+#' #' @example authors <- read.csv2(file.path(path.package('frontpage'), "extdata/example.csv"), header= T)
+#' temp <- dir.create(tempdir())
+#' frontpage(author, file.path(temp, 'frontpage1.docx'))
+#' shell.exec(file.path(temp, 'frontpage1.docx'))
 #' 
 #' @export
 frontpage <- function(author_list, path){
@@ -32,13 +36,14 @@ frontpage <- function(author_list, path){
     }
     
     doc <- docx()
+    doc <- addParagraph(doc, "\n")
     doc <- addParagraph(doc, numered_authors)
     
     for(i in seq(length(sorted_institutes))){
         doc <- addParagraph(doc, paste(i, sorted_institutes[i], sep = ". "))
     }
 
-    writeDoc(doc, file.path(path, "frontpage.docx"))
+    writeDoc(doc, path)
 }
 
 
